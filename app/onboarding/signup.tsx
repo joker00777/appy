@@ -150,7 +150,7 @@ export default function Login() {
                 style={{
                   fontSize: 15,
                   fontWeight: "bold",
-                  color: colors.primary,
+                  color: 'black',
                 }}
               >
                 Sign Up with Google
