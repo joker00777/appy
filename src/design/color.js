@@ -1,5 +1,6 @@
 const themeColors = {
   // #7F3DFF
+  main:"#7F3DFF",
   primary: "#0e93cb",
   secondary: "#131514",
   danger: "#FF88A4",
@@ -19,4 +20,5 @@ export const colors = {
   danger: themeColors.danger,
   debt: themeColors.debt,
   credit: themeColors.credit,
+  backgroundColor: themeColors.secondary
 };

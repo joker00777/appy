@@ -6,7 +6,7 @@ import { router } from "expo-router";
 // set cache vagera.
 export default function App() {
   setTimeout(() => {
-    router.replace("/onboarding"); //this.props.navigation.navigate('Login')
+    router.replace("/home"); //this.props.navigation.navigate('Login')
   }, 500);
 
   return (

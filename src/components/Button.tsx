@@ -3,7 +3,6 @@ import {
   View,
   TouchableOpacity,
   Text,
-  StyleProp,
   ViewStyle,
   GestureResponderEvent,
 } from "react-native";
@@ -29,11 +28,9 @@ export default function Button({
 
   const handlePress = React.useCallback(
     (e: GestureResponderEvent | React.FormEvent<HTMLFormElement>) => {
-      console.log("ffffffffffffffffffffffffff", formik);
       if (onPress instanceof Function) {
         onPress(e as GestureResponderEvent);
       } else if (formik?.handleSubmit) {
-        console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         formik.handleSubmit(e as React.FormEvent<HTMLFormElement>);
       }
     },
