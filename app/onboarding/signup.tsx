@@ -101,7 +101,6 @@ export default function Login() {
           <Button
             text="Sign Up"
             style={{
-              // backgroundColor: "#7F3DFF",
               borderRadius: 15,
               marginTop: 50,
               marginLeft: 10,
@@ -133,7 +132,7 @@ export default function Login() {
               style={{
                 justifyContent: "center",
                 alignItems: "center",
-                backgroundColor: colors.button.secondary,
+                backgroundColor: 'white',
                 borderRadius: 15,
                 marginLeft: 10,
                 marginRight: 10,
@@ -148,7 +147,7 @@ export default function Login() {
               <Google style={{ paddingRight: 50 }} />
               <Text
                 style={{
-                  fontSize: 25,
+                  fontSize: 15,
                   fontWeight: "bold",
                   color: colors.primary,
                 }}

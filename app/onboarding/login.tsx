@@ -67,7 +67,7 @@ export default function Login() {
         validateOnChange
         innerRef={formikRef}
       >
-        <View>
+      <View>
             <Input placeholder="Email" name="email" style={{ padding: 10 }} />
             <Input
               placeholder="Password"
@@ -126,7 +126,7 @@ export default function Login() {
             style={{
               fontWeight: "bold",
               fontSize: 15,
-              color: 'Black',
+              color: 'black',
             }}
           >
             Continue With Google
@@ -134,6 +134,23 @@ export default function Login() {
         </View>
       </TouchableOpacity>
     </View>
+      <View>
+          <Button
+            text="Login"
+            style={{
+              // backgroundColor: "#7F3DFF",
+              borderRadius: 15,
+              marginTop: 50,
+              marginLeft: 10,
+              marginRight: 10,
+              height: 56,
+              width: 380,
+              shadowColor: "#52006A",
+              elevation: 4,
+            }}
+            type="primary"
+          />
+        </View>
     </View>
   );
 }
