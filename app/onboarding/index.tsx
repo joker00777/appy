@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
 } from "react-native";
 import MoneyHand from "../../src/assets/icon/money-hand.svg";
 import Carousel from "react-native-reanimated-carousel";
@@ -90,50 +91,59 @@ export default function login() {
     <View style={styles.container}>
       <View
         style={{
-          paddingTop: 40,
+          height: "60%",
+          width: "100%",
         }}
       >
-        <Carousel
-          loop
-          autoPlay={true}
-          width={width}
-          height={height / 1.7}
-          scrollAnimationDuration={1500}
-          renderItem={renderItem}
-          data={data}
+        <Image
+          source={require("../../src/assets/image/try.webp")}
+          style={{ width: "100%", height: "100%", resizeMode: "cover" }}
         />
       </View>
-      {/* TODO make this a component */}
-      <Button
-        text="Sign Up"
-        style={{
-          // backgroundColor: "#7F3DFF",
-          borderRadius: 15,
-          marginLeft: 10,
-          marginRight: 10,
-          height: 56,
-          width: 343,
-          shadowColor: "#52006A",
-          elevation: 4,
-        }}
-        type="primary"
-        onPress={handleSignUp}
-      />
-      <Button
-        text="Login"
-        style={{
-          borderRadius: 15,
-          marginLeft: 10,
-          marginRight: 10,
-          height: 56,
-          width: 343,
-          shadowColor: "#52006A",
-          elevation: 4,
-          marginTop: 10,
-        }}
-        type="secondary"
-        onPress={handleLogIn}
-      />
+      <View>
+        <Text
+          style={{
+            // fontWeight: "bold",
+            fontSize: 30,
+            textAlign: "center",
+            padding: 20,
+            color: "white",
+          }}
+        >
+          Connecting journeys with deliveries – safely, swiftly, securely.
+        </Text>
+        {/* yeah saara style hardcoded nahi hona chahiye as phone sizes can differ */}
+        <Button
+          text="Sign Up"
+          style={{
+            borderRadius: 15,
+            marginLeft: 10,
+            marginRight: 10,
+            height: 56,
+            width: 343,
+            shadowColor: "#52006A",
+            elevation: 4,
+          }}
+          textColor="white"
+          type="primary"
+          onPress={handleSignUp}
+        />
+        <Button
+          text="Login"
+          style={{
+            borderRadius: 15,
+            marginLeft: 10,
+            marginRight: 10,
+            height: 56,
+            width: 343,
+            shadowColor: "#52006A",
+            elevation: 4,
+            marginTop: 10,
+          }}
+          type="secondary"
+          onPress={handleLogIn}
+        />
+      </View>
     </View>
   );
 }
@@ -141,8 +151,8 @@ export default function login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#131514",
+    // alignItems: "center",
+    // justifyContent: "center",
   },
 });

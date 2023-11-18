@@ -57,7 +57,8 @@ export default function Button({
         >
           <Text
             style={{
-              fontSize: 25,
+              fontWeight: "bold",
+              fontSize: 15,
               color: textColor
                 ? textColor
                 : type === "primary"
