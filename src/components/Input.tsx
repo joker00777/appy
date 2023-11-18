@@ -6,6 +6,9 @@ import {
   TextInputFocusEventData,
   ViewStyle,
   Text,
+  StyleProp,
+  TextStyle,
+  View,
 } from "react-native";
 import { useFormikContext } from "formik";
 import { colors } from "../design/color";
@@ -13,7 +16,7 @@ import { colors } from "../design/color";
 export interface InputProps {
   placeholder: string;
   name: string;
-  style: ViewStyle;
+  style: StyleProp<TextStyle>;
 }
 
 const startingAnimation = { opacity: 0, scale: 0.5 };
@@ -43,12 +46,25 @@ export default function Input({ placeholder, style, name }: InputProps) {
   );
   return (
     <>
-      <TextInput
-        onChangeText={handleChange}
-        onBlur={blurHandler}
-        placeholder={placeholder}
-        style={style}
-      ></TextInput>
+      <View
+        style={{
+          marginTop: 20,
+          borderColor: "#CDCDDB",
+          borderWidth: 1,
+          borderRadius: 15,
+          marginLeft: 10,
+          marginRight: 10,
+        }}
+      >
+        <TextInput
+          onChangeText={handleChange}
+          onBlur={blurHandler}
+          placeholder={placeholder}
+          placeholderTextColor={"grey"}
+          style={style}
+        />
+      </View>
+
       {error && (formik?.submitCount ?? 0) > 0 ? (
         <AnimatePresence>
           {error !== undefined && (

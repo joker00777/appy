@@ -123,7 +123,7 @@ export default function login() {
             width: 343,
             shadowColor: "#52006A",
             elevation: 4,
-          }}
+          }} 
           textColor="white"
           type="primary"
           onPress={handleSignUp}

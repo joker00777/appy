@@ -63,8 +63,8 @@ export default function Login() {
   );
 
   return (
-    <View>
-      <Top text="Sign Up" navigateBack={navigateBack} />
+    <View style={{ backgroundColor: colors.secondary, height: "100%" }}>
+      <Top text="Sign Up" navigateBack={navigateBack} textColor="white" />
       <Formik
         initialValues={initialValue}
         onSubmit={handleSignUp}
@@ -73,50 +73,25 @@ export default function Login() {
         validateOnChange
         innerRef={formikRef}
       >
-        <View>
-          <View
-            style={{
-              marginTop: 70,
-              borderColor: "#CDCDDB",
-              borderWidth: 1,
-              borderRadius: 15,
-              marginLeft: 10,
-              marginRight: 10,
-            }}
-          >
-            <Input placeholder="Name" name="name" style={{ padding: 10 }} />
-          </View>
-          <View
-            style={{
-              marginTop: 20,
-              borderColor: "#CDCDDB",
-              borderWidth: 1,
-              borderRadius: 15,
-              marginLeft: 10,
-              marginRight: 10,
-            }}
-          >
-            <Input placeholder="Email" name="email" style={{ padding: 10 }} />
-          </View>
-          <View
-            style={{
-              marginTop: 20,
-              borderColor: "#CDCDDB",
-              borderWidth: 1,
-              borderRadius: 15,
-              marginLeft: 10,
-              marginRight: 10,
-            }}
-          >
-            <Input
-              placeholder="Password"
-              name="password"
-              style={{ padding: 10 }}
-            />
-          </View>
+        <View style={{ marginTop: 50 }}>
+          <Input
+            placeholder="Name"
+            name="name"
+            style={{ padding: 10, color: "white" }}
+          />
+          <Input
+            placeholder="Email"
+            name="email"
+            style={{ padding: 10, color: "white" }}
+          />
+          <Input
+            placeholder="Password"
+            name="password"
+            style={{ padding: 10, color: "white" }}
+          />
           <View style={{ marginLeft: 20, marginRight: 20, marginTop: 30 }}>
             {/* <CheckBox></CheckBox> */}
-            <Text style={{ fontWeight: "bold" }}>
+            <Text style={{ fontWeight: "bold", color: "white" }}>
               By signing up, you agree to the{" "}
               <Text style={{ color: colors.primary }}>
                 Terms of Service and Privacy Policy
@@ -136,6 +111,7 @@ export default function Login() {
               shadowColor: "#52006A",
               elevation: 4,
             }}
+            textColor="white"
             type="primary"
           />
         </View>
@@ -174,6 +150,7 @@ export default function Login() {
                 style={{
                   fontSize: 25,
                   fontWeight: "bold",
+                  color: colors.primary,
                 }}
               >
                 Sign Up with Google
@@ -186,7 +163,9 @@ export default function Login() {
         <Text style={{ color: "#91919F", textAlign: "center" }}>
           Already have an account?
           <TouchableOpacity onPress={navigateToLogin}>
-            <Text style={{ color: "#7F3DFF", textDecorationLine: "underline" }}>
+            <Text
+              style={{ color: colors.primary, textDecorationLine: "underline" }}
+            >
               {" "}
               Login
             </Text>

@@ -15,6 +15,7 @@ export const colors = {
     credit: themeColors.credit,
   },
   primary: themeColors.primary,
+  secondary: themeColors.secondary,
   danger: themeColors.danger,
   debt: themeColors.debt,
   credit: themeColors.credit,
