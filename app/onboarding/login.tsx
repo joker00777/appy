@@ -10,6 +10,8 @@ import { LoginValuesType, ResponseType } from "../../types";
 import Input from "../../src/components/Input";
 import { LoginApi } from "../../api";
 import Top from "../../src/components/Top";
+import { colors } from "../../src/design/color";
+import Google from '../../src/assets/icon/google.svg'
 
 export default function Login() {
   const initialValue: LoginValuesType = {
@@ -50,45 +52,29 @@ export default function Login() {
   }, [router]);
 
   return (
-    <View>
-      <Top text="Login" navigateBack={navigateBack} />
+    <View style ={{backgroundColor: colors.secondary, height:"100%"}} >
+      <Top text="Login" navigateBack={navigateBack} textColor="white" />
+      <View style={{ marginTop: 50, marginBottom: 40, marginLeft:'5%' }}>
+        <Text style={{ color: "#91919F", textAlign: "left", fontSize:40, fontWeight:"200"}}>
+         What's your email and password?
+        </Text>
+      </View>
       <Formik
         initialValues={initialValue}
         onSubmit={handleLogIn}
-        // validationSchema={validationSchema}
+        validationSchema={validationSchema}
         validateOnMount
         validateOnChange
         innerRef={formikRef}
       >
         <View>
-          <View
-            style={{
-              marginTop: 70,
-              borderColor: "#CDCDDB",
-              borderWidth: 1,
-              borderRadius: 15,
-              marginLeft: 10,
-              marginRight: 10,
-            }}
-          >
             <Input placeholder="Email" name="email" style={{ padding: 10 }} />
-          </View>
-          <View
-            style={{
-              marginTop: 20,
-              borderColor: "#CDCDDB",
-              borderWidth: 1,
-              borderRadius: 15,
-              marginLeft: 10,
-              marginRight: 10,
-            }}
-          >
             <Input
               placeholder="Password"
               name="password"
               style={{ padding: 10 }}
             />
-          </View>
+    
           <Button
             text="Login"
             style={{
@@ -104,33 +90,50 @@ export default function Login() {
             }}
             type="primary"
           />
-          {/* <Button
-            text="Login"
-            style={{
-              // backgroundColor: "#7F3DFF",
-              marginTop: 50,
-              borderRadius: 15,
-              marginLeft: 10,
-              marginRight: 10,
-              height: 56,
-              shadowColor: "#52006A",
-              elevation: 4,
-            }}
-            type="primary"
-          /> */}
         </View>
       </Formik>
-      <View style={{ marginTop: 50 }}>
+      <View style={{ marginTop: 50,}}>
         <Text style={{ color: "#91919F", textAlign: "center" }}>
           Don’t have an account yet?
-          <TouchableOpacity onPress={navigateToSignUp}>
-            <Text style={{ color: "#7F3DFF", textDecorationLine: "underline" }}>
-              {" "}
-              Sign Up
-            </Text>
-          </TouchableOpacity>
         </Text>
       </View>
+    <View style={{ marginTop: 0 }} >
+      <TouchableOpacity
+        style={{
+          alignItems: "center",
+        }}
+        // onPress={()=>}
+      >
+        <View
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: 'white',
+            borderRadius: 15,
+            marginTop: 50,
+            marginLeft: 10,
+            marginRight: 10,
+            height: 56,
+            width: 380,
+            shadowColor: "#52006A",
+            elevation: 4,
+            flexDirection: "row",
+            flexBasis: "auto",
+          }}
+        >
+          <Google style={{ paddingRight: 50 }} />
+          <Text
+            style={{
+              fontWeight: "bold",
+              fontSize: 15,
+              color: 'Black',
+            }}
+          >
+            Continue With Google
+          </Text>
+        </View>
+      </TouchableOpacity>
+    </View>
     </View>
   );
 }
