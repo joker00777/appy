@@ -101,6 +101,7 @@ export default function Login() {
           <Button
             text="Sign Up"
             style={{
+              // backgroundColor: "#0f1725",
               borderRadius: 15,
               marginTop: 50,
               marginLeft: 10,

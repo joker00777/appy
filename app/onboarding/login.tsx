@@ -134,23 +134,6 @@ export default function Login() {
         </View>
       </TouchableOpacity>
     </View>
-      <View>
-          <Button
-            text="Login"
-            style={{
-              // backgroundColor: "#7F3DFF",
-              borderRadius: 15,
-              marginTop: 50,
-              marginLeft: 10,
-              marginRight: 10,
-              height: 56,
-              width: 380,
-              shadowColor: "#52006A",
-              elevation: 4,
-            }}
-            type="primary"
-          />
-        </View>
     </View>
   );
 }
