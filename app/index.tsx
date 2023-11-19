@@ -37,7 +37,7 @@ export default function login() {
 
   const navigateToHome = React.useCallback(
     (item: GestureResponderEvent) => {
-      router.push("/home");
+      router.push("/search");
     },
     [router]
   );
