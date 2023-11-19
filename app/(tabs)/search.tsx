@@ -1,6 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet, SafeAreaView, Pressable } from "react-native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { View, Text, StyleSheet, Pressable, StatusBar } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from "../../src/design/color";
 import Input from "../../src/components/Input";
 import { Calendar, DateData } from "react-native-calendars";
@@ -26,7 +26,9 @@ export default function Home() {
 
   return (
     // This is not working see why later..................
-    <SafeAreaProvider>
+    <>
+    <StatusBar barStyle="light-content" />
+    <SafeAreaView style={{ flex: 1, backgroundColor:colors.backgroundColor }}>
       <View
         style={{
           backgroundColor: colors.backgroundColor,
@@ -120,8 +122,8 @@ export default function Home() {
           </View>
         </View>
       </View>
-    </SafeAreaProvider>
-  );
+    </SafeAreaView>
+    </>);
 }
 
 const styles = StyleSheet.create({
