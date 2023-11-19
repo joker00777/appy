@@ -8,15 +8,15 @@ import {
   // CheckBox,
 } from "react-native";
 import * as Yup from "yup";
-import Google from "../../src/assets/icon/google.svg";
-import Button from "../../src/components/Button";
-import Input from "../../src/components/Input";
+import Google from "../src/assets/icon/google.svg";
+import Button from "../src/components/Button";
+import Input from "../src/components/Input";
 import { Formik, FormikProps } from "formik";
-import { SignUpValuesType } from "../../types";
+import { SignUpValuesType } from "../types";
 import { router } from "expo-router";
-import { SignUp } from "../../api";
-import Top from "../../src/components/Top";
-import { colors } from "../../src/design/color";
+import { SignUp } from "../api";
+import Top from "../src/components/Top";
+import { colors } from "../src/design/color";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Login() {
@@ -51,20 +51,16 @@ export default function Login() {
     [router]
   );
 
-  const navigateBack = React.useCallback(() => {
-    router.push("/onboarding");
-  }, [router]);
 
   const navigateToLogin = React.useCallback(
     (item: GestureResponderEvent) => {
-      router.push("/onboarding/login");
+      router.push("/login");
     },
     [router]
   );
 
   return (
     <View style={{ backgroundColor: colors.secondary, height: "100%" }}>
-      <Top text="Sign Up" navigateBack={navigateBack} textColor="white" />
       <Formik
         initialValues={initialValue}
         onSubmit={handleSignUp}
